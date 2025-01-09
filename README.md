@@ -2,7 +2,7 @@
 
 This Dashboard enables you to track your store expense and sales.
 
-Live Project Link : [Retail Store](https://retail-dashboard.vercel.app/dashboard)
+Live Project Link : [Retail Store](retail-dashboard-q4ucbszmc-harsh-handes-projects.vercel.app)
 
 
 ## Features
