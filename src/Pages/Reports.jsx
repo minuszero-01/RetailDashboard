@@ -51,6 +51,18 @@ const ChartTitle = styled.h3`
   margin-bottom: 16px;
 `;
 
+const FilterDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  margin-bottom: 10px;
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap-: 4px;
+  }
+`;
+
 export default function Reports() {
   const [filteredData, setFilteredData] = useState(salesData);
 
@@ -142,23 +154,31 @@ export default function Reports() {
   };
 
   return (
-    <>
-      <div style={{ fontSize: "16px" }}>Filter Using Date</div>
-      <Space direction="vertical" size={12}>
-        <RangePicker onChange={handleDateChange} />
-      </Space>
-
-      <Select
-        placeholder="Filter by region"
-        style={{ width: 200 }}
-        onChange={handleRegionChange}
-        allowClear
-      >
-        <Option value="North">North</Option>
-        <Option value="East">East</Option>
-        <Option value="West">West</Option>
-        <Option value="South">South</Option>
-      </Select>
+    <div style={{ padding: "16px 20px 16px" }}>
+      <FilterDiv>
+        <Space direction="vertical" size={12}>
+          <div style={{ fontSize: "16px", marginBottom: "4px" }}>
+            Filter Using Date
+          </div>
+          <RangePicker onChange={handleDateChange} />
+        </Space>
+        <div>
+          <div style={{ fontSize: "16px", marginBottom: "16px" }}>
+            Filter Using Date
+          </div>
+          <Select
+            placeholder="Filter by region"
+            style={{ width: 200 }}
+            onChange={handleRegionChange}
+            allowClear
+          >
+            <Option value="North">North</Option>
+            <Option value="East">East</Option>
+            <Option value="West">West</Option>
+            <Option value="South">South</Option>
+          </Select>
+        </div>
+      </FilterDiv>
 
       <ChartsContainer>
         {/* Line Chart */}
@@ -206,6 +226,6 @@ export default function Reports() {
           />
         </ChartWrapper>
       </ChartsContainer>
-    </>
+    </div>
   );
 }

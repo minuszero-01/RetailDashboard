@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  PieChartOutlined,
+  HomeOutlined,
+  SettingOutlined,
+} from "@ant-design/icons";
 
 import { MenuOutlined } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu, theme, Button } from "antd";
 import styled from "styled-components";
+import { icons } from "antd/es/image/PreviewGroup";
 
 const { Sider } = Layout;
 
@@ -52,9 +58,9 @@ const HamburgerButton = styled(Button)`
 `;
 
 const items1 = [
-  { label: "Dashboard", key: 1, path: "/dashboard" },
-  { label: "Reports", key: 2, path: "/reports" },
-  { label: "Settings", key: 3, path: "/settings" },
+  { label: "Dashboard", key: 1, path: "/dashboard", icon: <HomeOutlined /> },
+  { label: "Reports", key: 2, path: "/reports", icon: <PieChartOutlined /> },
+  { label: "Settings", key: 3, path: "/settings", icon: <SettingOutlined /> },
 ];
 
 export default function Sidebar() {
@@ -73,7 +79,7 @@ export default function Sidebar() {
   };
 
   return (
-    <>
+    <div>
       <HamburgerButton
         type="primary"
         icon={<MenuOutlined />}
@@ -93,6 +99,6 @@ export default function Sidebar() {
           items={items1}
         ></NewMenu>
       </NewSider>
-    </>
+    </div>
   );
 }

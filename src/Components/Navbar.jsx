@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { UserOutlined, SearchOutlined } from "@ant-design/icons";
 import { Dropdown, Input, Space, Button } from "antd";
+import MainLogo from "../Components/logo";
 
 // Profile Items
 const items = [
@@ -30,13 +31,7 @@ const StyledNavbar = styled.div`
 `;
 
 const Logo = styled.div`
-  font-size: 1.5rem;
-  font-weight: bold;
   margin-left: 20px;
-
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-  }
 `;
 
 const CustomSearch = styled(Input)`
@@ -68,6 +63,7 @@ const CustomButton = styled(Button)`
   color: black;
   border: none;
   margin-right: 20px;
+  padding: 16px 0px;
 
   &:hover {
     background-color: #f5a623 !important;
@@ -92,7 +88,9 @@ export default function Navbar() {
 
   return (
     <StyledNavbar>
-      <Logo>LOGO</Logo>
+      <Logo>
+        <MainLogo />
+      </Logo>
 
       <CustomSearch placeholder="Search..." prefix={<SearchOutlined />} />
       <SearchIcon
